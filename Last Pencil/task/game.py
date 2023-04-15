@@ -1,10 +1,10 @@
 import random
-import string
 
 users = ["John",  "Jack"]
 print("How many pencils would you like to use:")
 check_num_input = True
 check_name_input = True
+#check pencil number input integrity
 while check_num_input:
     num_of_pencils_input = input()
     if num_of_pencils_input.isdigit() and num_of_pencils_input != "0":
@@ -14,8 +14,8 @@ while check_num_input:
         print("The number of pencils should be positive")
     else:
         print("The number of pencils should be numeric")
-
 print(f"Who will be the first ({users[0]}, {users[1]}):")
+#check player name input integrity
 while check_name_input:
     current_user_input = input()
     if current_user_input not in users:
@@ -25,6 +25,7 @@ while check_name_input:
         check_name_input = False
 print("|" * num_of_pencils)
 while num_of_pencils != 0:
+    # user[0] is human
     if current_user == users[0]:
         print(f"{current_user}'s turn:")
         check_pencil_taken = True
@@ -40,6 +41,7 @@ while num_of_pencils != 0:
         num_of_pencils -= take_pencil
         print("|" * num_of_pencils)
         current_user = users[1]
+    #user[1] is bot
     elif current_user == users[1]:
         print(f"{current_user}'s turn:")
         if num_of_pencils == 1:
