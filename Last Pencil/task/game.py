@@ -42,16 +42,16 @@ while num_of_pencils != 0:
         current_user = users[1]
     elif current_user == users[1]:
         print(f"{current_user}'s turn:")
-        if num_of_pencils % 4 == 1:
-            take_pencil = random.randint(1,3)
-        elif num_of_pencils % 4 == 0:
-            take_pencil = 3
-        elif num_of_pencils % 4 == 3:
-            take_pencil = 2
+        if num_of_pencils == 1:
+            take_pencil = 1
         elif num_of_pencils % 4 == 2:
             take_pencil = 1
-        elif num_of_pencils == 1:
-            take_pencil = 1
+        elif num_of_pencils % 4 == 3:
+            take_pencil = 2
+        elif num_of_pencils % 4 == 0:
+            take_pencil = 3
+        elif num_of_pencils % 4 == 1:
+            take_pencil = random.randint(1,3)
         num_of_pencils -= take_pencil
         print(take_pencil)
         print("|" * num_of_pencils)
